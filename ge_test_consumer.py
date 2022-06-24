@@ -8,7 +8,7 @@ from logging.handlers import TimedRotatingFileHandler
 from avro.datafile import DataFileReader, DataFileWriter
 from avro.io import DatumReader, DatumWriter
 
-kafka_addr = '10.108.21.32:9093'
+kafka_addr = ''
 kafka_topic = 'scada-status'
 avro_format = '/app/scadastatus.avsc'
 out_file = 'status.log'
@@ -59,7 +59,7 @@ def read_data(consumer_avro,reader_format_handler,logformat):
         message_key_str = str(message.key)
         message_val = message.value
         # print (message.key)
-        # id from ABS.ESTN.RTU.S327
+        # 
         if (message_key_str.find('0cbdec0a') != -1):
             bytes_reader = io.BytesIO(message_val)
             decoder = avro.io.BinaryDecoder(bytes_reader)
