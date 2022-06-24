@@ -1,0 +1,13 @@
+{
+    "type": "record",
+    "namespace": "opsdata",
+    "name": "scadastatus",
+    "fields": [
+        {"name": "id", "type": "string" },
+        {"name": "name", "type": "string" },
+        {"name": "value", "type": "int" },
+        {"name": "quality1", "type": "long" },  
+        {"name": "quality2", "type": "long" },         
+        {"name": "time", "type": "long" }
+    ]
+}
